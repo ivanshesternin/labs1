@@ -1,0 +1,55 @@
+﻿@page
+@model StudentsTesting1.Pages.Teachers.TSubjectsModel
+@using StudentsTesting1.Logic.Exams;
+@using StudentsTesting1.Logic.Subjects;
+@{
+    ViewData["Title"] = "Предмети";
+}
+
+@section Navigation{
+    <ul class="navbar-nav flex-grow-1">
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-page="TSubjects">Предмети</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-page-handler="Logout">Вийти</a>
+        </li>
+    </ul>
+}
+
+<h3>Предмет</h3>
+
+<form method="post" asp-page-handler="ChangeSubject">
+    <select asp-for="selectedSubject" name="selectedSubject" onchange="this.form.submit();" id="selectedSubject">
+        @foreach (Subject subject in Model.subjects)
+        {
+            <option value="@subject.id">@subject.subjectTitle</option>
+        }
+    </select>
+
+</form><br/>
+
+<b>Групи: @Model.allGroups</b><br/>
+<b></b><br/>
+
+<h5>Призначити тест</h5>
+
+<form name="details" asp-page-handler="ExamDetails" method="post">
+    <table cellpadding="1" cellspacing="0" border="1">
+        <tr>
+            <td>Тест</td>
+            <td>Запитання</td>
+            <td>Спроби</td>
+            <td>Деталі</td>
+        </tr>
+        @foreach (Exam exam in Model.exams)
+        {
+            <tr>
+                <td>@exam.title</td>
+                <td>@exam.numberOfQuestions</td>
+                <td>@exam.attempts</td>
+                <td onclick="this.form.submit(@exam.id)" >Детальніше...</td>
+            </tr>
+        }
+    </table>
+</form>

@@ -1,0 +1,58 @@
+﻿@page
+@using StudentsTesting1.Logic.Groups;
+@using StudentsTesting1.Logic.Subjects;
+@model StudentsTesting1.Pages.Admin.AddGroupModel
+@{
+    ViewData["Title"] = "Групи";
+}
+
+@section Navigation{
+    <ul class="navbar-nav flex-grow-1">
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-page="AddTeacher">Викладачі</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-page="AddStudent">Студенти</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-page="AddGroup">Групи</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-page="AddSubject">Предмети</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-page-handler="Logout">Вийти</a>
+        </li>
+    </ul>
+}
+
+<h1>Групи</h1>
+
+<h3>Додати нову групу</h3>
+<form method="post">
+    <div class="validation" asp-validation-summary="ModelOnly" />
+    <div>
+        <div class="form-group">
+            <label>Введіть назву групи</label><br />
+            <input name="groupTitle" id="groupTitle" required />
+            <span asp-validation-for="groupTitle" />
+        </div>
+        <div class="form-group">
+            <input type="submit" asp-page-handler="RegisterGroup" value="Створити" class="btn btn-outline-dark" />
+        </div>
+    </div>
+    <b>@Model.error</b>
+    <table cellpadding="1" cellspacing="0" border="1">
+        <tr>
+            <td>Група</td>
+            <td>Предмети</td>
+        </tr>
+        @foreach (Group group in Model.groups)
+        {
+            <tr>
+                <td>@group.title</td>
+                <td>@group.StringOfSubjects()</td>
+            </tr>
+        }
+    </table>
+</form>

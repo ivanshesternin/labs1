@@ -1,0 +1,9 @@
+D:\Projects\C#\StudentsTesting1\StudentsTestingLogic\bin\Release\netcoreapp3.1\StudentsTestingLogic.deps.json
+D:\Projects\C#\StudentsTesting1\StudentsTestingLogic\bin\Release\netcoreapp3.1\StudentsTestingLogic.dll
+D:\Projects\C#\StudentsTesting1\StudentsTestingLogic\bin\Release\netcoreapp3.1\StudentsTestingLogic.pdb
+D:\Projects\C#\StudentsTesting1\StudentsTestingLogic\obj\Release\netcoreapp3.1\StudentsTestingLogic.csprojAssemblyReference.cache
+D:\Projects\C#\StudentsTesting1\StudentsTestingLogic\obj\Release\netcoreapp3.1\StudentsTestingLogic.AssemblyInfoInputs.cache
+D:\Projects\C#\StudentsTesting1\StudentsTestingLogic\obj\Release\netcoreapp3.1\StudentsTestingLogic.AssemblyInfo.cs
+D:\Projects\C#\StudentsTesting1\StudentsTestingLogic\obj\Release\netcoreapp3.1\StudentsTestingLogic.csproj.CoreCompileInputs.cache
+D:\Projects\C#\StudentsTesting1\StudentsTestingLogic\obj\Release\netcoreapp3.1\StudentsTestingLogic.dll
+D:\Projects\C#\StudentsTesting1\StudentsTestingLogic\obj\Release\netcoreapp3.1\StudentsTestingLogic.pdb

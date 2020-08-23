@@ -1,0 +1,98 @@
+﻿@page
+@model StudentsTesting1.Pages.Admin.AddStudentModel
+@using StudentsTesting1.Logic.Users;
+@using StudentsTesting1.Logic.Groups;
+@{
+    ViewData["Title"] = "Студенти";
+}
+
+@section Navigation{
+    <ul class="navbar-nav flex-grow-1">
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-page="AddTeacher">Викладачі</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-page="AddStudent">Студенти</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-page="AddGroup">Групи</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-page="AddSubject">Предмети</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-page-handler="Logout">Вийти</a>
+        </li>
+    </ul>
+}
+
+<h1>Студенти</h1>
+
+<h3>Зареєструвати студента</h3>
+<form method="post">
+    <div class="validation" asp-validation-summary="ModelOnly" />
+    <div>
+        <div class="form-group">
+            <input name="firstName" id="firstName" required /><label style="padding-left: 3em">Введіть ім'я</label>
+            <span asp-validation-for="firstName" />
+        </div>
+        <div class="form-group">
+            <input name="lastName" id="lastName" required /><label style="padding-left: 3em">Введіть прізвище</label>
+            <span asp-validation-for="lastName" />
+        </div>
+        <div class="form-group">
+            <select name="group" id="group" required />
+            @foreach (Group group in Model.groups)
+            {
+                <option value="@group.title">@group.title</option>
+            }
+            <select/><label style="padding-left: 10em">Оберіть групу зі списку</label>
+            <span asp-validation-for="group" />
+        </div>
+        <div class="form-group">
+            <input name="studentId" id="studentId" required /><label style="padding-left: 3em">Введіть номер студентського квитка</label>
+            <span asp-validation-for="studentId" />
+        </div>
+        <div class="form-group">
+            <input name="recordBook" id="recordBook" required /><label style="padding-left: 3em">Введіть номер залікової книжки</label>
+            <span asp-validation-for="recordBook" />
+        </div>
+        <div class="form-group">
+            <input name="login" id="login" required /><label style="padding-left: 3em">Введіть логін</label>
+            <span asp-validation-for="login" />
+        </div>
+        <div class="form-group">
+            <input name="password" id="password" required /><label style="padding-left: 3em">Введіть пароль</label>
+            <span asp-validation-for="password" />
+        </div>
+        <div class="form-group">
+            <input name="repeatPassword" id="repeatPassword" required /><label style="padding-left: 3em">Повтор пароля</label>
+            <span asp-validation-for="repeatPassword" />
+        </div>
+        <div class="form-group">
+            <input type="submit" asp-page-handler="RegisterStudent" value="Зареєструвати" class="btn btn-outline-dark" />
+        </div>
+    </div>
+    <b>@Model.error</b>
+    <table cellpadding="1" cellspacing="0" border="1">
+        <tr>
+            <td>Ім'я</td>
+            <td>Прізвище</td>
+            <td>Група</td>
+            <td>Номер студентського</td>
+            <td>Номер залікової книжки</td>
+            <td>Логін</td>
+        </tr>
+        @foreach (Student student in Model.students)
+        {
+    <tr>
+        <td>@student.firstName</td>
+        <td>@student.lastName</td>
+        <td>@student.groupTitle</td>
+        <td>@student.studentID</td>
+        <td>@student.recordBook</td>
+        <td>@student.login</td>
+    </tr>
+        }
+    </table>
+</form>

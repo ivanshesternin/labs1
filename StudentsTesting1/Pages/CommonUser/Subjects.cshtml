@@ -1,0 +1,47 @@
+﻿@page
+@using StudentsTesting1.Logic.Subjects;
+@using StudentsTesting1.Logic.Results;
+@using StudentsTesting1.Logic.Exams;
+
+@model StudentsTesting1.Pages.CommonUser.SubjectsModel
+@{
+    ViewData["Title"] = "Мої предмети";
+}
+@section Navigation{
+    <ul class="navbar-nav flex-grow-1">
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-page="Subjects">Мої предмети</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-page-handler="Logout">Вийти</a>
+        </li>
+    </ul>
+}
+
+<h1>Мої предмети</h1>
+
+@foreach (Subject subject in Model.subjects)
+{
+    <h3>@subject.subjectTitle</h3>
+    <table cellpadding="1" cellspacing="0" border="1">
+        <tr>
+            <td>Тест</td>
+            <td>Питання</td>
+            <td>Кількість спроб</td>
+            <td>Найкарщий результат</td>
+        </tr>
+        @foreach (Result result in Model.results)
+        {
+            if (result.exam.subjectId == subject.id)
+            {
+                <tr>
+                    <td>@result.exam.title</td>
+                    <td>@result.exam.numberOfQuestions</td>
+                    <td>@result.exam.attempts</td>
+                    <td>@result.score<td>
+                </tr>
+                }
+            }
+        </table>
+        }
+

@@ -1,0 +1,87 @@
+﻿@page
+@model StudentsTesting1.Pages.Admin.AddTeacherModel
+@using StudentsTesting1.Logic.Users;
+@{
+    ViewData["Title"] = "Викладачі";
+}
+
+@section Navigation{
+    <ul class="navbar-nav flex-grow-1">
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-page="AddTeacher">Викладачі</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-page="AddStudent">Студенти</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-page="AddGroup">Групи</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-page="AddSubject">Предмети</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-page-handler="Logout">Вийти</a>
+        </li>
+    </ul>
+}
+
+<h1>Викладачі</h1>
+
+<h3>Зареєструвати викладача</h3>
+<form method="post">
+    <div class="validation" asp-validation-summary="ModelOnly" />
+    <div>
+        <div class="form-group">
+            <label>Введіть ім'я</label><br />
+            <input name="firstName" id="firstName" required />
+            <span asp-validation-for="firstName" />
+        </div>
+        <div class="form-group">
+            <label>Введіть прізвище</label><br />
+            <input name="lastName" id="lastName" required />
+            <span asp-validation-for="lastName" />
+        </div>
+        <div class="form-group">
+            <label>Введіть унікальний ідентифікатор</label><br />
+            <input name="id" id="id" required />
+            <span asp-validation-for="id" />
+        </div>
+        <div class="form-group">
+            <label>Введіть логін</label><br />
+            <input name="login" id="login" required />
+            <span asp-validation-for="login" />
+        </div>
+        <div class="form-group">
+            <label>Введіть пароль</label><br />
+            <input name="password" id="password" required />
+            <span asp-validation-for="password" />
+        </div>
+        <div class="form-group">
+            <label>Повтор пароля</label><br />
+            <input name="repeatPassword" id="repeatPassword" required />
+            <span asp-validation-for="repeatPassword" />
+        </div>
+        <div class="form-group">
+            <input type="submit" asp-page-handler="RegisterTeacher" value="Зареєструвати" class="btn btn-outline-dark" />
+        </div>
+    </div>
+    <b>@Model.error</b>
+    <table cellpadding="1" cellspacing="0" border="1">
+        <tr>
+            <td>Ім'я</td>
+            <td>Прізвище</td>
+            <td>Ідентифікатор</td>
+            <td>Логін</td>
+        </tr>
+        @foreach (Teacher teacher in Model.teachers)
+        {
+            <tr>
+                <td>@teacher.firstName</td>
+                <td>@teacher.lastName</td>
+                <td>@teacher.teacherID</td>
+                <td>@teacher.login</td>
+            </tr>
+        }
+    </table>
+</form>
+

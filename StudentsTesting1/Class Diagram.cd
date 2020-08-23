@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="StudentsTesting1.Logic.Exams.Exam" Collapsed="true">
+    <Position X="9.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="StudentsTesting1.Logic.Questions.AnsweredQuestion" Collapsed="true">
+    <Position X="12" Y="3.5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="StudentsTesting1.Logic.Questions.Question" Collapsed="true">
+    <Position X="12" Y="4.75" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Orientation="Bottom" Position="0.146" />
+  </Class>
+  <Class Name="StudentsTesting1.Logic.Results.Result" Collapsed="true">
+    <Position X="9.25" Y="4" Width="1.5" />
+    <AssociationLine Name="student" Type="StudentsTesting1.Logic.Users.Student" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="9.25" Y="4.281" />
+        <Point X="8.875" Y="4.281" />
+        <Point X="8.875" Y="3.75" />
+        <Point X="8.25" Y="3.75" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier />
+    <ShowAsAssociation>
+      <Property Name="exam" />
+      <Property Name="student" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="StudentsTesting1.Logic.Subjects.Subject" Collapsed="true">
+    <Position X="9.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="StudentsTesting1.Logic.Users.Student" Collapsed="true">
+    <Position X="6.75" Y="3.25" Width="1.5" />
+    <InheritanceLine Type="StudentsTesting1.Logic.Users.User" FixedFromPoint="true">
+      <Path>
+        <Point X="6" Y="3.25" />
+        <Point X="6.75" Y="3.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier />
+  </Class>
+  <Class Name="StudentsTesting1.Logic.Users.Teacher" Collapsed="true">
+    <Position X="6.75" Y="1.25" Width="1.5" />
+    <InheritanceLine Type="StudentsTesting1.Logic.Users.User" FixedFromPoint="true">
+      <Path>
+        <Point X="6" Y="3.25" />
+        <Point X="6.375" Y="3.25" />
+        <Point X="6.375" Y="1.596" />
+        <Point X="6.75" Y="1.596" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier />
+  </Class>
+  <Class Name="StudentsTesting1.Logic.Users.User" Collapsed="true">
+    <Position X="4.5" Y="3" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="StudentsTesting1.DataAccess.DBAccess" Collapsed="true">
+    <Position X="18" Y="2.25" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="StudentsTesting1.DataAccess.ExamAccess" Collapsed="true">
+    <Position X="14" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="StudentsTesting1.DataAccess.GroupAccess" Collapsed="true">
+    <Position X="14" Y="1.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="StudentsTesting1.DataAccess.QuestionAccess" Collapsed="true">
+    <Position X="14" Y="2" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="StudentsTesting1.DataAccess.StudentAccess" Collapsed="true">
+    <Position X="14" Y="2.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="StudentsTesting1.DataAccess.SubjectAccess" Collapsed="true">
+    <Position X="14" Y="3.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="StudentsTesting1.DataAccess.TeacherAccess" Collapsed="true">
+    <Position X="14" Y="4.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="StudentsTesting1.Controllers.StudentController" Collapsed="true">
+    <Position X="6.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="StudentsTesting1.Controllers.TeacherController" Collapsed="true">
+    <Position X="6.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="StudentsTesting1.Logic.Groups.Group" Collapsed="true">
+    <Position X="9.25" Y="3" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="StudentsTesting1.Logic.Users.Admin" Collapsed="true">
+    <Position X="6.75" Y="4.75" Width="1.5" />
+    <InheritanceLine Type="StudentsTesting1.Logic.Users.User" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6" Y="3.25" />
+        <Point X="6.375" Y="3.25" />
+        <Point X="6.375" Y="5.062" />
+        <Point X="6.75" Y="5.062" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier />
+  </Class>
+  <Class Name="StudentsTesting1.Controllers.AccountController" Collapsed="true">
+    <Position X="4.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAAAAIAAEABAAAAAAEQAAAAAEA=</HashCode>
+      <FileName>Controllers\AccountController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="StudentsTesting1.Logic.Questions.IQuestion" Collapsed="true">
+    <Position X="12" Y="5.75" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="StudentsTesting1.Logic.Exams.IExam" Collapsed="true">
+    <Position X="9.25" Y="5" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="StudentsTesting1.Logic.Groups.IGroup" Collapsed="true">
+    <Position X="9.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="StudentsTesting1.Logic.Subjects.ISubject" Collapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="StudentsTesting1.DataAccess.IDBAccess" Collapsed="true">
+    <Position X="16.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
